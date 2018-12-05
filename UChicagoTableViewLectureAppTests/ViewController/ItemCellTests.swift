@@ -27,7 +27,7 @@ class ItemCellTests: XCTestCase {
         XCTAssertNotNil(cell.dateLabel)
     }
     
-    func testConfigWithTitle_setsTitle() {
+    func testConfigWithTitle_setsLabels() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         
@@ -39,8 +39,17 @@ class ItemCellTests: XCTestCase {
         
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
         
-        cell.configCellWith(item: ToDoItem(title: "Wash Bicycle"))
+        cell.configCellWith(item: ToDoItem(
+            title: "Wash Bicycle",
+            description: "Use soap and water to remove dirt from frame",
+            timestamp: 1546500000,
+            location: Location(name: "Home")
+            
+            ))
         XCTAssertEqual(cell.titleLabel.text, "Wash Bicycle")
+        XCTAssertEqual(cell.locationLabel.text, "Home")
+        XCTAssertEqual(cell.dateLabel.text!, "01/03/2019")
+
     }
 }
 
