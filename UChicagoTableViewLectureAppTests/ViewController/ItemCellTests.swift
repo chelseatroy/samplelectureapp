@@ -11,7 +11,7 @@ import XCTest
 
 class ItemCellTests: XCTestCase {
     
-    func testItemCell_hasTitleLabel() {
+    func testItemCell_hasLabels() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         
@@ -23,6 +23,9 @@ class ItemCellTests: XCTestCase {
         
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
         XCTAssertNotNil(cell.titleLabel)
+        XCTAssertNotNil(cell.locationLabel)
+        XCTAssertNotNil(cell.dateLabel)
+
     }
 }
 
