@@ -131,7 +131,7 @@ class ItemListDataProviderTests: XCTestCase {
         XCTAssertEqual(deleteButtonTitle, "Uncheck")
     }
     
-    func testCheckingAnItem_ChecksItInItemmanager() {
+    func testCheckingAnItem_ChecksItInItemManager() {
         let toDoItem = ToDoItem(title: "Eat Breakfast")
         sut.itemManager?.addItem(toDoItem)
         
@@ -144,8 +144,25 @@ class ItemListDataProviderTests: XCTestCase {
         XCTAssertEqual(sut.itemManager?.doneCount, 1)
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 0)
         XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
-
     }
+    
+    func testUncheckingAnItem_UnchecksItInItemManager() {
+        let toDoItem = ToDoItem(title: "Do Laundry")
+        sut.itemManager?.addItem(toDoItem)
+        _ = sut.itemManager? .checkItemAtIndex(0)
+        tableView.reloadData()
+        
+        let _ = tableView.dataSource?.tableView?(tableView,
+                                                 commit: .delete,
+                                                 forRowAt: IndexPath(row: 0, section: 1)
+        )
+        
+        XCTAssertEqual(sut.itemManager?.toDoCount, 1)
+        XCTAssertEqual(sut.itemManager?.doneCount, 0)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 0)
+    }
+
 
 
 }

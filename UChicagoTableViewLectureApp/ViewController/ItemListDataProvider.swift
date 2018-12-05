@@ -61,7 +61,17 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        _ = itemManager?.checkItemAtIndex(indexPath.row)
+        
+        guard let itemManager = itemManager else {fatalError()}
+        guard let itemSection = Section(rawValue: indexPath.section) else { fatalError() }
+
+        switch itemSection{
+        case .ToDo:
+            _ = itemManager.checkItemAtIndex(indexPath.row)
+        case .Done:
+            _ = itemManager.uncheckItemAtIndex(indexPath.row)
+        }
+
         tableView.reloadData()
     }
 
