@@ -14,8 +14,11 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     var itemManager: ItemManager?
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
+        if let toDoItem = itemManager?.itemAtIndex(indexPath.row) {
+        cell.configCellWith(item: toDoItem)
+        }
         return cell
     }
     

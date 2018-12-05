@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class ItemCell: UITableViewCell {
-    
+    func configCellWith(item: ToDoItem) {
+        
+    }
 }
