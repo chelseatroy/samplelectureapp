@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		76DB917F21B648C700B5E935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB917E21B648C700B5E935 /* AppDelegate.swift */; };
-		76DB918121B648C700B5E935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB918021B648C700B5E935 /* ViewController.swift */; };
 		76DB918421B648C700B5E935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DB918221B648C700B5E935 /* Main.storyboard */; };
 		76DB918621B648C700B5E935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76DB918521B648C700B5E935 /* Assets.xcassets */; };
 		76DB918921B648C700B5E935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76DB918721B648C700B5E935 /* LaunchScreen.storyboard */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		76DB917B21B648C700B5E935 /* UChicagoTableViewLectureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UChicagoTableViewLectureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DB917E21B648C700B5E935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		76DB918021B648C700B5E935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		76DB918321B648C700B5E935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76DB918521B648C700B5E935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76DB918821B648C700B5E935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				76DB917E21B648C700B5E935 /* AppDelegate.swift */,
-				76DB918021B648C700B5E935 /* ViewController.swift */,
 				76DB918221B648C700B5E935 /* Main.storyboard */,
 				76DB918521B648C700B5E935 /* Assets.xcassets */,
 				76DB918721B648C700B5E935 /* LaunchScreen.storyboard */,
@@ -239,7 +236,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				76DB91A921B7960A00B5E935 /* ItemManager.swift in Sources */,
-				76DB918121B648C700B5E935 /* ViewController.swift in Sources */,
 				76DB917F21B648C700B5E935 /* AppDelegate.swift in Sources */,
 				76DB91A321B78AEA00B5E935 /* Location.swift in Sources */,
 				76DB91A121B748A500B5E935 /* ToDoItem.swift in Sources */,

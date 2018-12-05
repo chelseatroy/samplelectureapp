@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 class ItemListViewController: UIViewController {
-    var tableView: UITableView?
-    
-    override func viewDidLoad() {
-        tableView = UITableView()
-    }
+    @IBOutlet var tableView: UITableView!
+
 }
