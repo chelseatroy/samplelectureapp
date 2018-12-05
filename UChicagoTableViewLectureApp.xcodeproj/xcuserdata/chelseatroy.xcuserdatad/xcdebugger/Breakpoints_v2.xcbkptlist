@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UChicagoTableViewLectureAppTests/ViewController/ItemListDataProviderTests.swift"
-            timestampString = "565718568.4816051"
+            timestampString = "565722544.880091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "testNumberOfRowsInFirstSection_istoDoCount()"
             landmarkType = "7">
          </BreakpointContent>
