@@ -45,6 +45,22 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         }
     }
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        guard let itemSection = Section(rawValue: indexPath.section) else {fatalError()}
+        
+        let buttonTitle: String
+        switch itemSection{
+        case .ToDo:
+            buttonTitle = "Check"
+        case .Done:
+            buttonTitle = "Uncheck"
+        }
+        
+        return buttonTitle
+    }
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
