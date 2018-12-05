@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class ItemCell: UITableViewCell {
+
+    @IBOutlet weak var titleLabel: UILabel!
+    
     func configCellWith(item: ToDoItem) {
         
     }
