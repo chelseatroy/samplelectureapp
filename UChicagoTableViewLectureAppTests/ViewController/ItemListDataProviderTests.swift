@@ -71,9 +71,9 @@ class ItemListDataProviderTests: XCTestCase {
         let mockTableView = MockTableView()
         
         mockTableView.dataSource = sut
-        mockTableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
+        mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
         
-        sut.itemManager?.addItem(ToDoItem(title: "Write Thesis"))
+        sut.itemManager?.addItem(ToDoItem(title: "Prepare Coffee"))
         mockTableView.reloadData()
         
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))

@@ -25,7 +25,22 @@ class ItemCellTests: XCTestCase {
         XCTAssertNotNil(cell.titleLabel)
         XCTAssertNotNil(cell.locationLabel)
         XCTAssertNotNil(cell.dateLabel)
-
+    }
+    
+    func testConfigWithTitle_setsTitle() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        
+        _ = controller.view
+        let tableView = controller.tableView
+        
+        let dataProvider = FakeDataSource()
+        tableView!.dataSource = dataProvider
+        
+        let cell = tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
+        
+        cell.configCellWith(item: ToDoItem(title: "Wash Bicycle"))
+        XCTAssertEqual(cell.titleLabel.text, "Wash Bicycle")
     }
 }
 
