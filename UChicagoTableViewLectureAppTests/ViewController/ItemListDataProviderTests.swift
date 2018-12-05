@@ -95,6 +95,30 @@ class ItemListDataProviderTests: XCTestCase {
 
     }
     
+    func testCellInSectionTwo_getsConfiguredWithDoneItem() {
+        let mockTableView = MockTableView(
+            frame: CGRect(x: 0, y: 0, width: 320, height: 480),
+            style: .plain
+        )
+        
+        mockTableView.dataSource = sut
+        mockTableView.register(MockItemCell.self, forCellReuseIdentifier: "ItemCell")
+        
+        let toDoItem = ToDoItem(title: "Get a Library Card")
+        let anotherToDoItem = ToDoItem(title: "Bake Pie for Mom")
+        sut.itemManager?.addItem(toDoItem)
+        sut.itemManager?.addItem(anotherToDoItem)
+
+        _ = sut.itemManager?.checkItemAtIndex(1) // we have now baked the pie!
+
+        mockTableView.reloadData()
+        
+        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! MockItemCell
+        XCTAssertEqual(cell.toDoItem!.title, "Bake Pie for Mom")
+    
+    }
+
+    
 }
 
 extension ItemListDataProviderTests {
