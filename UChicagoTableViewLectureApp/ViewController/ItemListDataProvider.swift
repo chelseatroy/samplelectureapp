@@ -59,6 +59,11 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
         
         return buttonTitle
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        _ = itemManager?.checkItemAtIndex(indexPath.row)
+        tableView.reloadData()
+    }
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
