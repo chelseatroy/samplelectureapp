@@ -9,8 +9,8 @@
 import Foundation
 
 class ItemManager {
-    private var toDos: [ToDoItem]
-    private var doneItems: [ToDoItem]
+    fileprivate var toDos: [ToDoItem]
+    fileprivate var doneItems: [ToDoItem]
     
     var toDoCount: Int {return self.toDos.count}
     var doneCount: Int {return self.doneItems.count}
@@ -23,7 +23,7 @@ class ItemManager {
         self.doneItems = doneItems
     }
     
-    func addItem(item: ToDoItem) {
+    func addItem(_ item: ToDoItem) {
         self.toDos.append(item)
     }
     
@@ -32,11 +32,13 @@ class ItemManager {
     }
     
     func checkedItemAtIndex(_ index: Int) -> ToDoItem {
-        return self.doneItems[index]
+        return doneItems[index]
     }
     
     func checkItemAtIndex(_ index: Int) -> ToDoItem {        
         let doneItem = toDos.remove(at: index)
+        doneItems.append(doneItem)
+        
         return doneItem
     }
 }

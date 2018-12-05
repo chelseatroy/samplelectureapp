@@ -161,10 +161,12 @@
 				TargetAttributes = {
 					76DB917A21B648C700B5E935 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					76DB918E21B648C700B5E935 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 76DB917A21B648C700B5E935;
 					};
@@ -428,6 +430,7 @@
 				76DB919A21B648C700B5E935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76DB919B21B648C700B5E935 /* Build configuration list for PBXNativeTarget "UChicagoTableViewLectureAppTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +439,7 @@
 				76DB919D21B648C700B5E935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

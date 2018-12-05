@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-struct Location {
+struct Location: Equatable {
     let name: String?
     let coordinate: CLLocationCoordinate2D?
     
@@ -20,4 +20,8 @@ struct Location {
         self.name = name
         self.coordinate = coordinate
     }
+}
+
+func ==(lhs: Location, rhs: Location) -> Bool {
+    return true
 }

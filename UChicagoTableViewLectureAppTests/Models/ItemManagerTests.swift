@@ -1,3 +1,4 @@
+
 //
 //  ItemManagerTests.swift
 //  UChicagoTableViewLectureApp
@@ -26,13 +27,13 @@ class ItemManagerTests: XCTestCase {
     
     func testItemAtIndex_returnsItem() {
         let toDo = ToDoItem(title: "Clean the House")
-        sut.addItem(item: toDo)
+        sut.addItem(toDo)
         XCTAssertEqual(sut.itemAtIndex(0), toDo)
     }
 
     func testAddItem_addsItemToCollection() {
         let toDo = ToDoItem(title: "Clean the House")
-        sut.addItem(item: toDo)
+        sut.addItem(toDo)
         XCTAssertEqual(sut.toDoCount, 1)
         XCTAssertEqual(sut.itemAtIndex(0), toDo)
     }
@@ -41,8 +42,8 @@ class ItemManagerTests: XCTestCase {
         let clean = ToDoItem(title: "Clean the House")
         let tomatos = ToDoItem(title: "Plant the Tomatos")
 
-        sut.addItem(item: clean)
-        sut.addItem(item: tomatos)
+        sut.addItem(clean)
+        sut.addItem(tomatos)
         
         XCTAssertEqual(sut.toDoCount, 2)
         XCTAssertEqual(sut.doneCount, 0)
@@ -50,14 +51,16 @@ class ItemManagerTests: XCTestCase {
         let doneItem = sut.checkItemAtIndex(0)
         
         XCTAssertEqual(sut.toDoCount, 1)
-        XCTAssertEqual(sut.doneCount, 0)
+        XCTAssertEqual(sut.doneCount, 1)
         XCTAssertEqual(sut.itemAtIndex(0), tomatos)
         XCTAssertEqual(doneItem, clean)
     }
     
     func testCheckedItemAtIndex_returnsItem() {
         let toDo = ToDoItem(title: "Clean the House")
-        sut.addItem(item: toDo)
+        sut.addItem(toDo)
+        _ = sut.checkItemAtIndex(0)
+
         
         let checkedItem = sut.checkedItemAtIndex(0)
         XCTAssertEqual(checkedItem, toDo)
