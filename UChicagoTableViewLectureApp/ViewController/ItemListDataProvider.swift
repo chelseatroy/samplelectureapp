@@ -14,7 +14,7 @@ class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate
     var itemManager: ItemManager?
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return ItemCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

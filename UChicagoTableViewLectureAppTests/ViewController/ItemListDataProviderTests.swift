@@ -54,6 +54,19 @@ class ItemListDataProviderTests: XCTestCase {
         tableView.reloadData()
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
-
+    }
+    
+    func testCellForRow_returnsItemCell() {
+        let sut = ItemListDataProvider()
+        sut.itemManager = ItemManager()
+        
+        let tableView = UITableView()
+        tableView.dataSource = sut
+        
+        sut.itemManager?.addItem(ToDoItem(title: "Check Schedule"))
+        tableView.reloadData()
+        
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(cell is ItemCell)
     }
 }

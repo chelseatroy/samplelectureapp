@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76546C2A21B8340800DC388F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76546C2921B8340800DC388F /* ItemCell.swift */; };
 		76CE3E0921B823A6002B96B7 /* ItemListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE3E0821B823A6002B96B7 /* ItemListDataProvider.swift */; };
 		76CE3E0B21B823B9002B96B7 /* ItemListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE3E0A21B823B9002B96B7 /* ItemListDataProviderTests.swift */; };
 		76DB917F21B648C700B5E935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB917E21B648C700B5E935 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76546C2921B8340800DC388F /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCell.swift; path = ViewController/ItemCell.swift; sourceTree = "<group>"; };
 		76CE3E0821B823A6002B96B7 /* ItemListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemListDataProvider.swift; path = ViewController/ItemListDataProvider.swift; sourceTree = "<group>"; };
 		76CE3E0A21B823B9002B96B7 /* ItemListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemListDataProviderTests.swift; path = ViewController/ItemListDataProviderTests.swift; sourceTree = "<group>"; };
 		76DB917B21B648C700B5E935 /* UChicagoTableViewLectureApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UChicagoTableViewLectureApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				76FA2BF621B81BB300218BD9 /* Models */,
 				76FA2BF821B81C0D00218BD9 /* ItemListViewController.swift */,
 				76CE3E0821B823A6002B96B7 /* ItemListDataProvider.swift */,
+				76546C2921B8340800DC388F /* ItemCell.swift */,
 			);
 			path = UChicagoTableViewLectureApp;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				76DB917F21B648C700B5E935 /* AppDelegate.swift in Sources */,
 				76DB91A321B78AEA00B5E935 /* Location.swift in Sources */,
 				76DB91A121B748A500B5E935 /* ToDoItem.swift in Sources */,
+				76546C2A21B8340800DC388F /* ItemCell.swift in Sources */,
 				76FA2BF921B81C0D00218BD9 /* ItemListViewController.swift in Sources */,
 				76CE3E0921B823A6002B96B7 /* ItemListDataProvider.swift in Sources */,
 			);
