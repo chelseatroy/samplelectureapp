@@ -10,12 +10,32 @@ import Foundation
 import UIKit
 
 class ItemListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
+    
+    var itemManager: ItemManager?
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let itemManager = itemManager else {return 0}
+        guard let itemSection = Section(rawValue: section) else { fatalError() }
+        
+        switch itemSection {
+        case .ToDo:
+            return itemManager.toDoCount
+        case .Done:
+            return itemManager.doneCount
+        }
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+}
+
+enum Section: Int {
+    case ToDo
+    case Done
 }
