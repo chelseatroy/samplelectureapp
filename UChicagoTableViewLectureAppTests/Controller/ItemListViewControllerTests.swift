@@ -18,14 +18,12 @@ class ItemListViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView)
     }
     
-    func test_OnViewDidLoad_SetsDataSourceAndDelegate() {
+    func test_OnViewDidLoad_AssignsDataSourceAndDelegate() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let sut = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         _ = sut.view //accessing the view forces the view to load in a UIViewController
         
         XCTAssertNotNil(sut.tableView.dataSource)
-        XCTAssertNotNil(sut.tableView.delegate)
-        XCTAssertEqual(sut.tableView.dataSource as? ItemListDataProvider, sut.tableView.delegate as? ItemListDataProvider)
+        XCTAssertTrue(sut.tableView.dataSource is ItemListDataprovider)
     }
-
 }

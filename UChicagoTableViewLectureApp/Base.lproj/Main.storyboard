@@ -36,10 +36,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dataProvider" destination="7JK-kV-pOO" id="nsy-4J-0CP"/>
                         <outlet property="tableView" destination="PSh-Du-XUW" id="bcx-YW-o7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6H-sV-iOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="7JK-kV-pOO" customClass="ItemListDataProvider" customModule="UChicagoTableViewLectureApp" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-167" y="16"/>
         </scene>
