@@ -182,7 +182,7 @@ extension ItemListDataProviderTests {
         var configCellGotCalled = false
         var toDoItem: ToDoItem?
         
-        override func configCellWith(item: ToDoItem){
+        override func configCellWith(item: ToDoItem, checked: Bool = false){
             toDoItem = item
             configCellGotCalled = true
         }

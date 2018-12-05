@@ -49,8 +49,34 @@ class ItemCellTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, "Wash Bicycle")
         XCTAssertEqual(cell.locationLabel.text, "Home")
         XCTAssertEqual(cell.dateLabel.text!, "01/03/2019")
-
     }
+    
+    func testTitle_forCheckedTasks_IsStruckThrough() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        
+        _ = controller.view
+        let tableView = controller.tableView
+        
+        let dataProvider = FakeDataSource()
+        tableView!.dataSource = dataProvider
+        
+        let cell = tableView?.dequeueReusableCell(withIdentifier: "ItemCell", for: IndexPath(row: 0, section: 0)) as! ItemCell
+        
+        let item = ToDoItem(
+            title: "Wash Bicycle",
+            description: "Use soap and water to remove dirt from frame",
+            timestamp: 1546500000,
+            location: Location(name: "Home"))
+        
+        cell.configCellWith(item:item, checked: true)
+        let attributedString = NSAttributedString(string: item.title, attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+        
+        XCTAssertEqual(cell.titleLabel.attributedText, attributedString)
+        XCTAssertEqual(cell.locationLabel.text, nil)
+        XCTAssertEqual(cell.dateLabel.text, nil)
+    }
+
 }
 
 extension ItemCellTests {
