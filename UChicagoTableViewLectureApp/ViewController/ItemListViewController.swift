@@ -16,6 +16,10 @@ class ItemListViewController: UIViewController {
     override func viewDidLoad() {
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
+        
+        dataProvider.itemManager = ItemManager()
+        
+        super.viewDidLoad()
     }
 
 }

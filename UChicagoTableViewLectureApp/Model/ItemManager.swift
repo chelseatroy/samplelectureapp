@@ -21,6 +21,10 @@ class ItemManager {
         ){
         self.toDos = toDos
         self.doneItems = doneItems
+        
+        for item in exampleData(){
+            self.toDos.append(item)
+        }
     }
     
     func addItem(_ item: ToDoItem) {
@@ -49,4 +53,40 @@ class ItemManager {
         return undoneItem
     }
 
+}
+
+func exampleData() -> [ToDoItem] {
+    let toDoCollection = [ToDoItem(
+                            title: "Wake Up",
+                            description: "Use soap and water to remove dirt from frame",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home")),
+                          ToDoItem(
+                            title: "Put the Coffee On",
+                            description: "",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home")),
+                          ToDoItem(
+                            title: "Eat Breakfast",
+                            description: "",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home")),
+                          ToDoItem(
+                            title: "Brush Teeth",
+                            description: "",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home")),
+                          ToDoItem(
+                            title: "Put on Pants",
+                            description: "",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home")),
+                          ToDoItem(
+                            title: "Go Outside",
+                            description: "",
+                            timestamp: 1546500000,
+                            location: Location(name: "Home"))
+     
+     ]
+    return toDoCollection
 }
